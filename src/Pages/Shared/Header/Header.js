@@ -84,13 +84,14 @@ const Header = () => {
               <Nav.Link>Contact</Nav.Link>
             </Nav>
             <nav className="d-flex align-items-center flex-column flex-lg-row">
+              <span>Dark mode</span>
               <FormGroup>
                 <FormControlLabel
-                  label="Dark Mode"
+                  // label="Dark Mode"
                   control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
                 />
               </FormGroup>
-              <FaUser></FaUser>
+              <FaUser size={"1.5em"}></FaUser>
             </nav>
           </Navbar.Collapse>
         </Container>

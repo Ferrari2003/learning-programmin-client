@@ -1,0 +1,9 @@
+.box {
+  height: 200px;
+  width: 300px;
+  /* color: #b0cbe4a0; */
+}
+
+.gap {
+  gap: 40px;
+}
