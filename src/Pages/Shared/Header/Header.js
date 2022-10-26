@@ -10,7 +10,7 @@ import Switch from "@mui/material/Switch";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { Image } from "react-bootstrap";
 import "./Header.css";
@@ -74,9 +74,9 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-          <Navbar.Brand
+          <div
             onClick={() => navigate("/")}
-            className="d-flex align-items-center"
+            className="d-flex align-items-center navbar-brand"
           >
             <img
               alt=""
@@ -84,19 +84,21 @@ const Header = () => {
               width="60"
               height="60"
               className="d-inline-block align-top me-2"
-            />{" "}
+            />
             <span className="fw-bold text-primary">LEARN HIVE</span>
-          </Navbar.Brand>
+          </div>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
             id="responsive-navbar-nav"
             className="justify-content-between"
           >
-            <Nav>
-              <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-              <Nav.Link onClick={() => navigate("/")}>About Us</Nav.Link>
-              <Nav.Link onClick={() => navigate("/courses")}>Courses</Nav.Link>
-              <Nav.Link onClick={() => navigate("/")}>Contact</Nav.Link>
+            <Nav className="align-items-center g-2">
+              <NavLink to="/" end>
+                Home
+              </NavLink>
+              <NavLink to="/about">About Us</NavLink>
+              <NavLink to="/courses">Courses</NavLink>
+              <NavLink to="/contact">Contact</NavLink>
             </Nav>
             <nav className="d-flex align-items-center flex-column flex-lg-row">
               <span>Dark mode</span>
@@ -106,41 +108,42 @@ const Header = () => {
                   control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
                 />
               </FormGroup>
-              {/* <Link to="/profile">
-                {user.uid ? (
+
+              {user ? (
+                <OverlayTrigger
+                  key={`bottom`}
+                  placement={`bottom`}
+                  overlay={<Tooltip id={`top`}>{user.displayName}</Tooltip>}
+                >
                   <Image
-                    style={{ height: "30px" }}
+                    className="profile-img me-3"
+                    style={{ height: "40px", width: "40px" }}
                     roundedCircle
                     src={user?.photoURL}
                   ></Image>
-                ) : (
-                  <FaUser></FaUser>
-                )}
-              </Link> */}
-              <Nav.Link>
-                {user ? (
-                  <OverlayTrigger
-                    key={`bottom`}
-                    placement={`bottom`}
-                    overlay={<Tooltip id={`top`}>{user.displayName}</Tooltip>}
-                  >
-                    <Image
-                      style={{ height: "30px", width: "30px" }}
-                      roundedCircle
-                      src={user?.photoURL}
-                    ></Image>
-                  </OverlayTrigger>
-                ) : (
-                  ""
-                )}
-              </Nav.Link>
-              <Nav.Link>
-                {user ? (
-                  <Link onClick={handleLogOut}> Logout</Link>
-                ) : (
-                  <Link to="/login"> Login</Link>
-                )}
-              </Nav.Link>
+                </OverlayTrigger>
+              ) : (
+                ""
+              )}
+
+              {user ? (
+                <Link
+                  className="btn btn-primary"
+                  style={{ fontWeight: "500", textDecoration: "none" }}
+                  onClick={handleLogOut}
+                >
+                  Logout
+                </Link>
+              ) : (
+                <Link
+                  className="btn btn-primary"
+                  style={{ fontWeight: "500", textDecoration: "none" }}
+                  to="/login"
+                >
+                  {" "}
+                  Login
+                </Link>
+              )}
             </nav>
           </Navbar.Collapse>
         </Container>

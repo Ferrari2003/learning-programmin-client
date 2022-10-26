@@ -1,3 +1,22 @@
 .navbar-brand:hover {
   cursor: pointer;
 }
+.navbar-nav {
+  gap: 20px;
+}
+.navbar-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+}
+
+.active {
+  border-bottom: 2px solid #0463ef;
+  color: #0463ef !important;
+}
+.navbar-nav a:hover {
+  color: #0463ef;
+}
+.profile-img:hover {
+  cursor: pointer;
+}

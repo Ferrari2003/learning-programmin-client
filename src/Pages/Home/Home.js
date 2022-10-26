@@ -1,5 +1,5 @@
 import { Col, Container, Row, Card } from "react-bootstrap";
-import { FaCheck, FaRegFolderOpen } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import Hero from "./Hero/Hero";
 import "./Home.css";
 import { AiOutlineRise } from "react-icons/ai";
@@ -16,60 +16,62 @@ const Home = () => {
   return (
     <div>
       <Hero></Hero>
-      <div className="d-flex container justify-content-center gap my-5">
-        <div className="box shadow rounded text-center  p-3">
-          <div>
-            <FaRegFolderOpen
-              className="text-primary"
-              size={"3em"}
-            ></FaRegFolderOpen>
-          </div>
-          <div className="ms-3">
-            <h5 className="text-primary">40+ UX Courses</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              vero.
-            </p>
-          </div>
-        </div>
-        <div className="box shadow rounded text-center  p-3">
-          <div>
-            <FaRegFolderOpen
-              className="text-primary"
-              size={"3em"}
-            ></FaRegFolderOpen>
-          </div>
-          <div className="ms-3">
-            <h5 className="text-primary">40+ UX Courses</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              vero.
-            </p>
-          </div>
-        </div>
-        <div className="box shadow rounded text-center  p-3">
-          <div>
-            <FaRegFolderOpen
-              className="text-primary"
-              size={"3em"}
-            ></FaRegFolderOpen>
-          </div>
-          <div className="ms-3">
-            <h5 className="text-primary">40+ UX Courses</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              vero.
-            </p>
-          </div>
-        </div>
-      </div>
+      <Container className="my-5">
+        <Row className="gap justify-content-center">
+          <Col xs={11} md={3} className="box shadow rounded text-center   p-3">
+            <img
+              className="img-fluid"
+              src="https://i.ibb.co/hBv1s90/folders.png"
+              alt=""
+            />
 
-      <Container>
-        <Row>
-          <Col>
+            <div className="ms-3">
+              <h5 className="text-primary">40+ UX Courses</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+                vero.
+              </p>
+            </div>
+          </Col>
+          <Col xs={11} md={3} className="box shadow rounded text-center  p-3">
+            <img
+              className="img-fluid"
+              src="https://i.ibb.co/rmhhgTh/expert.png"
+              alt=""
+            />
+
+            <div className="ms-3">
+              <h5 className="text-primary">Expert instructors</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+                vero.
+              </p>
+            </div>
+          </Col>
+          <Col xs={11} md={3} className="box shadow rounded text-center  p-3">
+            <img
+              className="img-fluid"
+              src="https://i.ibb.co/5FYMSwk/chronometer.png"
+              alt=""
+            />
+
+            <div className="ms-3">
+              <h5 className="text-primary">Life time access</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+                vero.
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
+      <Container className="my-5 py-5">
+        <Row className="gx-5">
+          <Col xs={12} md={6}>
             <img src={imgLern} alt="" />
           </Col>
-          <Col>
+          <Col xs={12} md={6}>
             <AiOutlineRise
               style={{
                 // backgroundColor: "blue",
@@ -78,10 +80,10 @@ const Home = () => {
                 padding: "10px",
               }}
               size={"3em"}
-              className="bg-primary"
+              className="bg-primary mt-5"
             ></AiOutlineRise>
-            <h2>Learn new skills online with top educators</h2>
-            <p>
+            <h2 className="mt-3">Learn new skills online with top educators</h2>
+            <p className="mb-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consectetur commodi, minus dolor id cum amet repellendus
               repudiandae optio incidunt modi.
@@ -120,52 +122,52 @@ const Home = () => {
       </Container>
 
       <Container>
-        <h2>Our Top Subjects</h2>
-        <Row className="text-center text-light">
-          <Col>
+        <h2 className="text-center mb-5">Our Top Subjects</h2>
+        <Row className="gap justify-content-center text-center text-light">
+          <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
               <img src="https://i.ibb.co/m4LC5sh/graphic-design.png" alt="" />
               <h4>Graphics Design</h4>
             </div>
           </Col>
-          <Col>
+          <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
               <img src="https://i.ibb.co/fNKwVWm/web-development.png" alt="" />
               <h4>Web Development</h4>
             </div>
           </Col>
-          <Col>
+          <Col xs={11} md={3}>
             <div className="subject-box rounded shadow   bg-primary py-5">
               <img src="https://i.ibb.co/hdNhNrC/social-media.png" alt="" />
-              <h4>Graphics Design</h4>
+              <h4>Digital Marketing</h4>
             </div>
           </Col>
         </Row>
-        <Row className="text-center mt-4 text-light">
-          <Col>
+        <Row className="gap justify-content-center text-center mt-5 text-light">
+          <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
               <img src="https://i.ibb.co/j9CJDq3/ui.png" alt="" />
-              <h4>Graphics Design</h4>
+              <h4>UI/UX Design</h4>
             </div>
           </Col>
-          <Col>
+          <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
               <img src="https://i.ibb.co/Ykdw0yz/data-science.png" alt="" />
-              <h4>Web Development</h4>
+              <h4>Data Science</h4>
             </div>
           </Col>
-          <Col>
+          <Col xs={11} md={3}>
             <div className="subject-box rounded shadow   bg-primary py-5">
               <img src="https://i.ibb.co/RPxWrH0/deep-learning.png" alt="" />
-              <h4>Graphics Design</h4>
+              <h4>Artificial Intelligence </h4>
             </div>
           </Col>
         </Row>
       </Container>
 
-      <Container>
-        <Row className="align-items-center">
-          <Col>
+      <Container className="my-5">
+        <Row className="align-items-center flex-column-reverse flex-md-row">
+          <Col xs={12} md={6}>
             {/* <AiOutlineRise
               style={{
                 // backgroundColor: "blue",
@@ -176,7 +178,7 @@ const Home = () => {
               size={"3em"}
               className="bg-primary"
             ></AiOutlineRise> */}
-            <h2>Learner outcomes on courses you will take</h2>
+            <h2 className="mt-5">Learner outcomes on courses you will take</h2>
 
             {/* Icon Lists  */}
 
@@ -207,7 +209,7 @@ const Home = () => {
             </div>
             {/* Icon Lists End */}
           </Col>
-          <Col>
+          <Col xs={12} md={6}>
             <img src={imgLern} alt="" />
           </Col>
         </Row>
@@ -308,12 +310,12 @@ const Home = () => {
       </Container>
 
       <Container>
-        <Row>
-          <Col>
+        <Row className="align-items-center">
+          <Col xs={12} md={6}>
             <img src={imgLern} alt="" />
           </Col>
-          <Col>
-            <h2>Learn new skills online with top educators</h2>
+          <Col xs={12} md={6}>
+            <h2 className="mt-5">Learn new skills online with top educators</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consectetur commodi, minus dolor id cum amet repellendus
