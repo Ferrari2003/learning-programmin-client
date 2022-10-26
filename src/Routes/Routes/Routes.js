@@ -4,6 +4,7 @@ import Courses from "../../Pages/Courses/Courses/Courses";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
   {
@@ -16,7 +17,12 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses",
-        element: <Courses></Courses>,
+        element: (
+          <PrivateRoutes>
+            <Courses></Courses>
+          </PrivateRoutes>
+        ),
+        // loader: () => fetch("MOCK_DATA.json"),
       },
       {
         path: "/login",
@@ -25,6 +31,10 @@ export const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/courses/:id",
+        element: <p>This is course detail</p>,
       },
     ],
   },

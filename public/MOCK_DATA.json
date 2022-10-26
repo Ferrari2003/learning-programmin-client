@@ -1,0 +1,6 @@
+[{"id":1,"displayName":"Asoka","description":"Nondisplaced segmental fracture of shaft of radius, right arm, subsequent encounter for open fracture type I or II with nonunion","rating":4,"price":108},
+{"id":2,"displayName":"Sub-Ex","description":"Superficial frostbite of left knee and lower leg, subsequent encounter","rating":3,"price":198},
+{"id":3,"displayName":"Zontrax","description":"Erectile dysfunction following radical cystectomy","rating":1,"price":133},
+{"id":4,"displayName":"Daltfresh","description":"Acute lymphangitis of umbilicus","rating":3,"price":142},
+{"id":5,"displayName":"Flexidy","description":"Nondisplaced comminuted supracondylar fracture without intercondylar fracture of unspecified humerus, subsequent encounter for fracture with malunion","rating":5,"price":113},
+{"id":6,"displayName":"Bamity","description":"Family history of diseases of the digestive system","rating":3,"price":101}]

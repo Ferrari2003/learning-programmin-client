@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../Assets/Logo/logo1.svg";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -7,11 +7,22 @@ import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
-import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import { Image } from "react-bootstrap";
+import "./Header.css";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -63,7 +74,10 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home" className="d-flex align-items-center">
+          <Navbar.Brand
+            onClick={() => navigate("/")}
+            className="d-flex align-items-center"
+          >
             <img
               alt=""
               src={logo}
@@ -79,12 +93,10 @@ const Header = () => {
             className="justify-content-between"
           >
             <Nav>
-              <Nav.Link>Home</Nav.Link>
-              <Nav.Link>About Us</Nav.Link>
-              <Nav.Link>
-                <Link to="/courses"> Courses</Link>
-              </Nav.Link>
-              <Nav.Link>Contact</Nav.Link>
+              <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
+              <Nav.Link onClick={() => navigate("/")}>About Us</Nav.Link>
+              <Nav.Link onClick={() => navigate("/courses")}>Courses</Nav.Link>
+              <Nav.Link onClick={() => navigate("/")}>Contact</Nav.Link>
             </Nav>
             <nav className="d-flex align-items-center flex-column flex-lg-row">
               <span>Dark mode</span>
@@ -94,9 +106,40 @@ const Header = () => {
                   control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
                 />
               </FormGroup>
-              <FaUser size={"1.5em"}></FaUser>
+              {/* <Link to="/profile">
+                {user.uid ? (
+                  <Image
+                    style={{ height: "30px" }}
+                    roundedCircle
+                    src={user?.photoURL}
+                  ></Image>
+                ) : (
+                  <FaUser></FaUser>
+                )}
+              </Link> */}
               <Nav.Link>
-                <Link to="/login"> Login</Link>
+                {user ? (
+                  <OverlayTrigger
+                    key={`bottom`}
+                    placement={`bottom`}
+                    overlay={<Tooltip id={`top`}>{user.displayName}</Tooltip>}
+                  >
+                    <Image
+                      style={{ height: "30px", width: "30px" }}
+                      roundedCircle
+                      src={user?.photoURL}
+                    ></Image>
+                  </OverlayTrigger>
+                ) : (
+                  ""
+                )}
+              </Nav.Link>
+              <Nav.Link>
+                {user ? (
+                  <Link onClick={handleLogOut}> Logout</Link>
+                ) : (
+                  <Link to="/login"> Login</Link>
+                )}
               </Nav.Link>
             </nav>
           </Navbar.Collapse>
