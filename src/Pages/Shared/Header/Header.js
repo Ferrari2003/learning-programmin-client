@@ -9,6 +9,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 
 import { FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -80,7 +81,9 @@ const Header = () => {
             <Nav>
               <Nav.Link>Home</Nav.Link>
               <Nav.Link>About Us</Nav.Link>
-              <Nav.Link>Courses</Nav.Link>
+              <Nav.Link>
+                <Link to="/courses"> Courses</Link>
+              </Nav.Link>
               <Nav.Link>Contact</Nav.Link>
             </Nav>
             <nav className="d-flex align-items-center flex-column flex-lg-row">
@@ -92,6 +95,9 @@ const Header = () => {
                 />
               </FormGroup>
               <FaUser size={"1.5em"}></FaUser>
+              <Nav.Link>
+                <Link to="/login"> Login</Link>
+              </Nav.Link>
             </nav>
           </Navbar.Collapse>
         </Container>
