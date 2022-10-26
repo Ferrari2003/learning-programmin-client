@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { BsClock, BsFileBarGraph, BsStarFill } from "react-icons/bs";
+import { FiUserPlus } from "react-icons/fi";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Courses = () => {
@@ -9,7 +11,7 @@ const Courses = () => {
 
   return (
     <div>
-      <Container className="vh-100">
+      <Container className="">
         <Row className="mt-5">
           <Col md={3}>
             {data.map((course) => (
@@ -17,22 +19,53 @@ const Courses = () => {
             ))}
           </Col>
           <Col>
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} md={2} lg={3} className="g-4">
               {data.map((course) => (
                 <Col>
                   <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src={course.img} />
                     <Card.Body>
                       <Card.Title>{course.displayName}</Card.Title>
-                      <Card.Text>
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </Card.Text>
+                      <Row className="flex-wrap text-center mt-3">
+                        <Col>
+                          <div>
+                            <BsClock className="text-primary"></BsClock>
+                          </div>
+                          <span>{course.class} class</span>
+                        </Col>
+                        <Col className="flex-grow-1">
+                          <div>
+                            <BsFileBarGraph className="text-primary"></BsFileBarGraph>
+                          </div>
+                          <span> {course.level}</span>
+                        </Col>
+                        <Col>
+                          <div>
+                            <FiUserPlus className="text-primary"></FiUserPlus>
+                          </div>
+                          <span>{course.enrolled}</span>
+                        </Col>
+                      </Row>
+                      <Row className="flex-wrap mt-4 justify-content-between ">
+                        <Col>
+                          <strong>Price: </strong>
+                          <span>{course.price}$</span>
+                        </Col>
+                        <Col className=" d-flex align-items-center justify-content-end">
+                          <BsStarFill
+                            style={{ color: "goldenrod" }}
+                          ></BsStarFill>
+                          <span className="ms-1"> {course.rating}</span>
+                        </Col>
+                      </Row>
+                      <div className="text-center mt-4 mb-2">
+                        <Link to={`/courses/${course.id}`}>
+                          <button className="w-100 btn btn-primary">
+                            View Detail
+                          </button>
+                        </Link>
+                      </div>
                     </Card.Body>
-                    <Link to={`/courses/${course.id}`}>
-                      <button>Select</button>
-                    </Link>
                   </Card>
                 </Col>
               ))}
