@@ -7,3 +7,8 @@
 .gap {
   gap: 40px;
 }
+
+.subject-box img {
+  width: 25%;
+  margin-bottom: 10px;
+}
