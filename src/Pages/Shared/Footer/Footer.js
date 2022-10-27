@@ -1,9 +1,9 @@
 import React from "react";
-import { Col, Container, Nav, NavbarBrand, Row } from "react-bootstrap";
+import { Col, Container, Nav, Row } from "react-bootstrap";
 import "./Footer.css";
 import logo from "../../../Assets/Logo/logo1.svg";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
