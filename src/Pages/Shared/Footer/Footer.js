@@ -25,8 +25,8 @@ const Footer = () => {
               <span className="fw-bold text-light">LEARN HIVE</span>
             </div>
             <p className="pt-2 text-center text-md-start">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-              sint.
+              No matter your skill level, you’ll find so much to learn in a wide
+              range of creative categories.
             </p>
           </Col>
           <Col>

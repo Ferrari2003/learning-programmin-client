@@ -2,6 +2,7 @@ import React from "react";
 import heroBg from "../../../Assets/Home/hero-bg.svg";
 import Button from "react-bootstrap/Button";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div
@@ -26,7 +27,9 @@ const Hero = () => {
               start with Courses. You have tons of options to make the outcome
               that matches your project ideally.
             </p>
-            <Button variant="primary">Free Trial</Button>
+            <Link to="/courses">
+              <Button variant="primary">Free Trial</Button>
+            </Link>
           </Col>
         </Row>
       </Container>

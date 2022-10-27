@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { BsDownload, BsFilePdf, BsStarFill } from "react-icons/bs";
-import { FaIcons } from "react-icons/fa";
+import { VscBook, VscGlobe, VscGraph, VscHome } from "react-icons/vsc";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import "./CourseDetail.css";
 import Pdf from "react-to-pdf";
 import BreadHeader from "../../Shared/BreadHeader/BreadHeader";
+import { FiUserPlus } from "react-icons/fi";
 
 const ref = React.createRef();
 
@@ -100,7 +101,7 @@ const CourseDetail = () => {
                 <ul>
                   <li className="d-flex">
                     <div className="course__video-icon">
-                      <FaIcons></FaIcons>
+                      <VscHome></VscHome>
                     </div>
                     <div className="course__video-info ms-3">
                       <p>
@@ -111,7 +112,7 @@ const CourseDetail = () => {
                   </li>
                   <li className="d-flex ">
                     <div className="course__video-icon">
-                      <FaIcons></FaIcons>
+                      <VscBook></VscBook>
                     </div>
                     <div className="course__video-info ms-3">
                       <p>
@@ -122,7 +123,7 @@ const CourseDetail = () => {
                   </li>
                   <li className="d-flex ">
                     <div className="course__video-icon">
-                      <FaIcons></FaIcons>
+                      <VscGraph></VscGraph>
                     </div>
                     <div className="course__video-info ms-3">
                       <p>
@@ -132,7 +133,7 @@ const CourseDetail = () => {
                   </li>
                   <li className="d-flex ">
                     <div className="course__video-icon">
-                      <FaIcons></FaIcons>
+                      <FiUserPlus></FiUserPlus>
                     </div>
                     <div className="course__video-info ms-3">
                       <p>
@@ -143,7 +144,7 @@ const CourseDetail = () => {
                   </li>
                   <li className="d-flex ">
                     <div className="course__video-icon">
-                      <FaIcons></FaIcons>
+                      <VscGlobe></VscGlobe>
                     </div>
                     <div className="course__video-info ms-3">
                       <p>
@@ -178,8 +179,7 @@ const CourseDetail = () => {
                 className="btn btn-primary w-100 mt-4"
                 onClick={handleEnroll}
               >
-                {" "}
-                Enroll{" "}
+                Get premium access
               </button>
             </div>
             <div className="rounded shadow p-4 my-3">

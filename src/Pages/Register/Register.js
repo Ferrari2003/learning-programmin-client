@@ -10,7 +10,6 @@ import BreadHeader from "../Shared/BreadHeader/BreadHeader";
 
 const Register = () => {
   const [error, setError] = useState("");
-  const [accepted, setAccepted] = useState(false);
   const { createUser, updateUserProfile, verifyEmail } =
     useContext(AuthContext);
   const navigate = useNavigate();
@@ -59,10 +58,6 @@ const Register = () => {
         .then(() => {})
         .catch((error) => console.error(error));
     };
-
-    const handleAccepted = (event) => {
-      setAccepted(event.target.checked);
-    };
   };
   return (
     <div>
@@ -75,10 +70,10 @@ const Register = () => {
               className="p-5 rounded shadow my-5 mx-auto"
             >
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Full Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter Name"
+                  placeholder="Enter Full Name"
                   name="name"
                 />
                 {/* <Form.Text className="text-muted">

@@ -93,9 +93,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
             id="responsive-navbar-nav"
-            className="justify-content-between"
+            className="justify-content-between "
           >
-            <Nav className="ms-5 align-items-center g-2">
+            <Nav className="mx-4 ms-md-5 mt-4 mt-md-0  g-2">
               <NavLink to="/" end>
                 Home
               </NavLink>
@@ -103,8 +103,7 @@ const Header = () => {
               <NavLink to="/faq">FAQ</NavLink>
               <NavLink to="/blog">Blog</NavLink>
             </Nav>
-            <nav className="d-flex align-items-center flex-column flex-lg-row">
-              <span>Dark mode</span>
+            <nav className="d-flex align-items-center mt-3 mt-md-auto flex-column flex-lg-row">
               <FormGroup>
                 <FormControlLabel
                   // label="Dark Mode"
@@ -119,7 +118,7 @@ const Header = () => {
                   overlay={<Tooltip id={`top`}>{user.displayName}</Tooltip>}
                 >
                   <Image
-                    className="profile-img me-3"
+                    className="profile-img me-3 mt-3 mt-md-auto"
                     style={{ height: "40px", width: "40px" }}
                     roundedCircle
                     src={user?.photoURL}
@@ -131,7 +130,7 @@ const Header = () => {
 
               {user ? (
                 <Link
-                  className="btn btn-primary"
+                  className="btn btn-primary my-3 my-md-auto"
                   style={{ fontWeight: "500", textDecoration: "none" }}
                   onClick={handleLogOut}
                 >
@@ -139,7 +138,7 @@ const Header = () => {
                 </Link>
               ) : (
                 <Link
-                  className="btn btn-primary"
+                  className="btn btn-primary my-3 my-md-auto"
                   style={{ fontWeight: "500", textDecoration: "none" }}
                   to="/login"
                 >
