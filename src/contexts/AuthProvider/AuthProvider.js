@@ -58,13 +58,14 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+  const [selected, setSelected] = useState({});
 
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("MOCK_DATA.json")
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   fetch("https://leran-hive.elhameduaid.com")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data));
+  // }, []);
 
   const authInfo = {
     user,
@@ -76,7 +77,8 @@ const AuthProvider = ({ children }) => {
     verifyEmail,
     createUser,
     signIn,
-    data,
+    selected,
+    setSelected,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

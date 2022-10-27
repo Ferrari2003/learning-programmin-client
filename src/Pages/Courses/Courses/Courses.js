@@ -1,27 +1,40 @@
 import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { BsClock, BsFileBarGraph, BsStarFill } from "react-icons/bs";
 import { FiUserPlus } from "react-icons/fi";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Courses = () => {
-  const { data } = useContext(AuthContext);
+  const data = useLoaderData();
+  console.log(data);
 
   return (
     <div>
       <Container className="">
         <Row className="mt-5">
-          <Col md={3}>
+          <Col
+            md={3}
+            className=" px-5 pt-5 rounded"
+            style={{ backgroundColor: "rgba(176, 203, 228, 0.627)" }}
+          >
+            <h3 className="text-center mb-3">All Courses</h3>
             {data.map((course) => (
-              <Link>{course.displayName}</Link>
+              <Link
+                className="d-block mb-3"
+                style={{ textDecoration: "none" }}
+                key={course.id}
+                to={`/courses/${course.id}`}
+              >
+                {course.displayName}
+              </Link>
             ))}
           </Col>
           <Col>
             <Row xs={1} md={2} lg={3} className="g-4">
               {data.map((course) => (
-                <Col>
+                <Col key={course.id}>
                   <Card>
                     <Card.Img variant="top" src={course.img} />
                     <Card.Body>

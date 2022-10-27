@@ -121,7 +121,7 @@ const Home = () => {
         </Row>
       </Container>
 
-      <Container>
+      <Container className="my-5 py-5">
         <h2 className="text-center mb-5">Our Top Subjects</h2>
         <Row className="gap justify-content-center text-center text-light">
           <Col xs={11} md={3}>
@@ -165,7 +165,7 @@ const Home = () => {
         </Row>
       </Container>
 
-      <Container className="my-5">
+      <Container className="my-5 py-5">
         <Row className="align-items-center flex-column-reverse flex-md-row">
           <Col xs={12} md={6}>
             {/* <AiOutlineRise
@@ -215,7 +215,7 @@ const Home = () => {
         </Row>
       </Container>
 
-      <Container className="my-5 mx-auto text-center">
+      <Container className="my-5 py-5 mx-auto text-center">
         <div className="text-center mb-5">
           <h2>Meet Our Mentors</h2>
         </div>
@@ -309,7 +309,7 @@ const Home = () => {
         </Swiper>
       </Container>
 
-      <Container>
+      <Container className="my-5 py-5">
         <Row className="align-items-center">
           <Col xs={12} md={6}>
             <img src={imgLern} alt="" />
