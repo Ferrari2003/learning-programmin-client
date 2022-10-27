@@ -60,12 +60,12 @@ const AuthProvider = ({ children }) => {
   }, []);
   const [selected, setSelected] = useState({});
 
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://leran-hive.elhameduaid.com")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data));
-  // }, []);
+  const [allCourses, setAllCourses] = useState([]);
+  useEffect(() => {
+    fetch("https://leran-hive.elhameduaid.com")
+      .then((res) => res.json())
+      .then((data) => setAllCourses(data));
+  }, []);
 
   const authInfo = {
     user,
@@ -79,6 +79,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     selected,
     setSelected,
+    allCourses,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

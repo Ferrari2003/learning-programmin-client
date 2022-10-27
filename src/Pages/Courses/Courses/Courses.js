@@ -7,23 +7,25 @@ import { FiUserPlus } from "react-icons/fi";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Courses = () => {
-  const data = useLoaderData();
-  console.log(data);
+  const { allCourses } = useContext(AuthContext);
 
   return (
     <div>
       <Container className="">
-        <Row className="mt-5">
+        <Row className="my-5">
           <Col
             md={3}
             className=" px-5 pt-5 rounded"
             style={{ backgroundColor: "rgba(176, 203, 228, 0.627)" }}
           >
-            <h3 className="text-center mb-3">All Courses</h3>
-            {data.map((course) => (
+            <h3 className=" mb-3">All Courses</h3>
+            {allCourses.map((course) => (
               <Link
-                className="d-block mb-3"
-                style={{ textDecoration: "none" }}
+                className="d-block py-3 text-dark course-left-link fw-bold"
+                style={{
+                  textDecoration: "none",
+                  borderBottom: "1px solid #eef0f6",
+                }}
                 key={course.id}
                 to={`/courses/${course.id}`}
               >
@@ -33,7 +35,7 @@ const Courses = () => {
           </Col>
           <Col>
             <Row xs={1} md={2} lg={3} className="g-4">
-              {data.map((course) => (
+              {allCourses.map((course) => (
                 <Col key={course.id}>
                   <Card>
                     <Card.Img variant="top" src={course.img} />

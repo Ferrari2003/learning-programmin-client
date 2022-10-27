@@ -22,7 +22,6 @@ export const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
-        loader: () => fetch("https://leran-hive.elhameduaid.com"),
       },
       {
         path: "/login",

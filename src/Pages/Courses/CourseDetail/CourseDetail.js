@@ -9,8 +9,20 @@ import "./CourseDetail.css";
 
 const CourseDetail = () => {
   const courseSingle = useLoaderData();
-  const { displayName } = courseSingle;
-  const { setSelected } = useContext(AuthContext);
+  const {
+    displayName,
+    img,
+    author,
+    class_length,
+    description,
+    enrolled,
+    price,
+    old_price,
+    level,
+    last_update,
+  } = courseSingle;
+  const { setSelected, allCourses } = useContext(AuthContext);
+  console.log(courseSingle);
 
   const navigate = useNavigate();
 
@@ -45,16 +57,17 @@ const CourseDetail = () => {
         <Row className="my-5">
           <Col md={9} className="px-3 ">
             <h2 className="my-4">{displayName}</h2>
-            <div className="d-flex gap">
+            <div className="d-flex gap mb-4">
               <div>
                 <p className="mb-0">
-                  <strong>Mentor</strong>
+                  <strong>Mentor:</strong>
                 </p>
-                <p>Mentor</p>
+                <p className="mb-0">{author}</p>
               </div>
               <div>
                 <p className="mb-0">
                   <strong>Last Update:</strong>
+                  <p className="mb-0">{last_update}</p>
                 </p>
               </div>
               <div>
@@ -68,86 +81,65 @@ const CourseDetail = () => {
                 <BsStarFill style={{ color: "goldenrod" }}></BsStarFill>
               </div>
             </div>
-            <img
-              className="img-fluid w-100"
-              src="https://i.ibb.co/ftXxcJf/5778864.jpg"
-              alt=""
-            />
+            <img className="img-fluid w-100" src={img} alt="" />
             <h3 className="my-4">Course Overview</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-              nulla aperiam expedita necessitatibus vero odio possimus eligendi
-              a et? Temporibus, dolores laudantium facere fugiat possimus
-              blanditiis reiciendis eius qui inventore, ex quia natus quisquam
-              voluptates illo consequuntur ipsa assumenda dolore! Nihil
-              doloremque repellat cum neque debitis impedit nesciunt et.
-              Obcaecati placeat reiciendis, accusantium tenetur asperiores dicta
-              ipsa sit, tempora, totam odio facere at! Autem commodi nesciunt
-              quaerat exercitationem, vel odit provident minus veritatis iure,
-              vero possimus sapiente. Fuga repudiandae doloribus omnis,
-              necessitatibus at sit iste? Numquam dolorum aspernatur illum
-              voluptas repellat velit ex ad provident. Excepturi omnis deserunt
-              asperiores. Commodi.
-            </p>
+            <p>{description}</p>
           </Col>
 
           <Col md={3}>
             <div className="rounded shadow p-4 my-3">
-              <img
-                className="img-fluid d-none d-md-block"
-                src="https://i.ibb.co/ftXxcJf/5778864.jpg"
-                alt=""
-              />
+              <img className="img-fluid d-none d-md-block" src={img} alt="" />
 
-              <div class="course__video-content mb-35 mt-4">
+              <div className="course__video-content mb-35 mt-4">
                 <ul>
-                  <li class="d-flex">
-                    <div class="course__video-icon">
+                  <li className="d-flex">
+                    <div className="course__video-icon">
                       <FaIcons></FaIcons>
                     </div>
-                    <div class="course__video-info ms-3">
+                    <div className="course__video-info ms-3">
                       <p>
-                        <span className="h6 text-dark">Instructor :</span>{" "}
-                        Eleanor Fant
+                        <span className="h6 text-dark">Instructor : </span>
+                        {author}
                       </p>
                     </div>
                   </li>
-                  <li class="d-flex ">
-                    <div class="course__video-icon">
+                  <li className="d-flex ">
+                    <div className="course__video-icon">
                       <FaIcons></FaIcons>
                     </div>
-                    <div class="course__video-info ms-3">
+                    <div className="course__video-info ms-3">
                       <p>
-                        <span className="h6 text-dark">Lectures :</span> 14
+                        <span className="h6 text-dark">Class :</span>{" "}
+                        {class_length}
                       </p>
                     </div>
                   </li>
-                  <li class="d-flex ">
-                    <div class="course__video-icon">
+                  <li className="d-flex ">
+                    <div className="course__video-icon">
                       <FaIcons></FaIcons>
                     </div>
-                    <div class="course__video-info ms-3">
+                    <div className="course__video-info ms-3">
                       <p>
-                        <span className="h6 text-dark">Duration :</span> 6 weeks
+                        <span className="h6 text-dark">Level : </span> {level}
                       </p>
                     </div>
                   </li>
-                  <li class="d-flex ">
-                    <div class="course__video-icon">
+                  <li className="d-flex ">
+                    <div className="course__video-icon">
                       <FaIcons></FaIcons>
                     </div>
-                    <div class="course__video-info ms-3">
+                    <div className="course__video-info ms-3">
                       <p>
-                        <span className="h6 text-dark">Enrolled :</span> 20
-                        students
+                        <span className="h6 text-dark">Enrolled : </span>
+                        {enrolled}
                       </p>
                     </div>
                   </li>
-                  <li class="d-flex ">
-                    <div class="course__video-icon">
+                  <li className="d-flex ">
+                    <div className="course__video-icon">
                       <FaIcons></FaIcons>
                     </div>
-                    <div class="course__video-info ms-3">
+                    <div className="course__video-info ms-3">
                       <p>
                         <span className="h6 text-dark">Language :</span> English
                       </p>
@@ -157,12 +149,12 @@ const CourseDetail = () => {
               </div>
               <div className="d-flex align-items-center justify-content-between">
                 <div>
-                  <span className="h4 fw-bold mb-0">$200</span>
+                  <span className="h4 fw-bold mb-0">${price}</span>
                   <span
                     className="h5  mb-0 amount ms-2"
                     style={{ color: "#777a7c" }}
                   >
-                    $200
+                    ${old_price}
                   </span>
                 </div>
                 <span
@@ -186,23 +178,25 @@ const CourseDetail = () => {
             </div>
             <div className="rounded shadow p-4 my-3">
               <h4>Related Course</h4>
-              <div class="course__video-content mb-35 mt-4">
+              <div className="course__video-content mb-35 mt-4">
                 <ul>
-                  <Link>
-                    <li class="d-flex align-items-center">
-                      <div class="course__video-icon">
-                        <img
-                          className="img-fluid"
-                          src={courseSingle.img}
-                          alt=""
-                          width={"80px"}
-                        />
-                      </div>
-                      <div class="course__video-info ms-3">
-                        <p className="h6">{displayName}</p>
-                      </div>
-                    </li>
-                  </Link>
+                  {allCourses.map((course) => (
+                    <Link key={course.id} to={`/courses/${course.id}`}>
+                      <li className="d-flex align-items-center">
+                        <div className="course__video-icon">
+                          <img
+                            className="img-fluid"
+                            src={course.img}
+                            alt=""
+                            width={"80px"}
+                          />
+                        </div>
+                        <div className="course__video-info ms-3">
+                          <p className="h6">{course.displayName}</p>
+                        </div>
+                      </li>
+                    </Link>
+                  ))}
                 </ul>
               </div>
             </div>
