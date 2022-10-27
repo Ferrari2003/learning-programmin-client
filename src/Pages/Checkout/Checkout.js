@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import BreadHeader from "../Shared/BreadHeader/BreadHeader";
 
 const Checkout = () => {
   const { selected, setSelected } = useContext(AuthContext);
@@ -14,29 +15,14 @@ const Checkout = () => {
     setTimeout(() => {
       navigate("/");
       setSelected({});
-    }, 2000);
+    }, 1000);
   };
 
   return (
     <div>
       {selected.id ? (
         <>
-          <section
-            className=" include-bg pt-150 pb-150 breadcrumb__overlay text-light "
-            style={{
-              backgroundImage: `url("https://i.ibb.co/DQC36zr/7915212-3785210-1900x.jpg")`,
-            }}
-          >
-            <div className="container">
-              <div className="row">
-                <div className="col-xxl-12">
-                  <div className="breadcrumb__content text-center p-relative z-index-1">
-                    <h2 className="breadcrumb__title">CHECKOUT</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <BreadHeader title="CHECKOUT"></BreadHeader>
           <div className="container my-5 ">
             <Row className="justify-content-center">
               <Col xs={11} md={6}>

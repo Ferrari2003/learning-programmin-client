@@ -95,13 +95,13 @@ const Header = () => {
             id="responsive-navbar-nav"
             className="justify-content-between"
           >
-            <Nav className="align-items-center g-2">
+            <Nav className="ms-5 align-items-center g-2">
               <NavLink to="/" end>
                 Home
               </NavLink>
-              <NavLink to="/about">About Us</NavLink>
               <NavLink to="/courses">Courses</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/faq">FAQ</NavLink>
+              <NavLink to="/blog">Blog</NavLink>
             </Nav>
             <nav className="d-flex align-items-center flex-column flex-lg-row">
               <span>Dark mode</span>

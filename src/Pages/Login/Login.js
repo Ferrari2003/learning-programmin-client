@@ -7,6 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import BreadHeader from "../Shared/BreadHeader/BreadHeader";
 import "./Login.css";
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
         toast.success("Successfully logged in!");
         setTimeout(() => {
           navigate(from, { replace: true });
-        }, 2000);
+        }, 1000);
       })
       .catch((error) => console.log(error));
   };
@@ -37,7 +38,7 @@ const Login = () => {
         toast.success("Successfully logged in!");
         setTimeout(() => {
           navigate(from, { replace: true });
-        }, 2000);
+        }, 1000);
       })
       .catch((error) => console.log(error));
   };
@@ -59,7 +60,7 @@ const Login = () => {
           toast.success("Successfully logged in!");
           setTimeout(() => {
             navigate(from, { replace: true });
-          }, 2000);
+          }, 1000);
         } else {
           toast.error(
             "Your email is not verified. Please verify your email address."
@@ -80,6 +81,7 @@ const Login = () => {
 
   return (
     <div>
+      <BreadHeader title="Login"></BreadHeader>
       <Container className="login-container">
         <Row className="justify-content-center ">
           <Col xs={10} md={5}>
@@ -115,12 +117,17 @@ const Login = () => {
               </div>
               <Toaster position="top-center" reverseOrder={false} />
 
-              <Button variant="primary" type="submit">
-                Login
-              </Button>
+              <div className="text-center">
+                <Button variant="primary" type="submit" className="mt-1">
+                  Login
+                </Button>
+              </div>
 
-              <p>
-                New To This Site? <Link to="/register">Create an account</Link>
+              <p className="my-4 text-center">
+                New To This Site?{" "}
+                <Link className="login-a" to="/register">
+                  Create an account
+                </Link>
               </p>
               <div className="or-text-box">
                 <p className="or-text text-center">OR</p>

@@ -2,9 +2,11 @@ import { async } from "@firebase/util";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layouts/Main";
 import Error from "../../Pages/404/Error";
+import Blog from "../../Pages/Blog/Blog";
 import Checkout from "../../Pages/Checkout/Checkout";
 import CourseDetail from "../../Pages/Courses/CourseDetail/CourseDetail";
 import Courses from "../../Pages/Courses/Courses/Courses";
+import Faq from "../../Pages/FAQ/Faq";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
@@ -22,6 +24,14 @@ export const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/faq",
+        element: <Faq></Faq>,
       },
       {
         path: "/login",

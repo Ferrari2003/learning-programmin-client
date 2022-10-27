@@ -6,6 +6,7 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import "./CourseDetail.css";
 import Pdf from "react-to-pdf";
+import BreadHeader from "../../Shared/BreadHeader/BreadHeader";
 
 const ref = React.createRef();
 
@@ -38,22 +39,7 @@ const CourseDetail = () => {
       {/* {courseSingle.displayName}
       <button onClick={handleEnroll}> enroll this course</button> */}
 
-      <section
-        className=" include-bg pt-150 pb-150 breadcrumb__overlay text-light "
-        style={{
-          backgroundImage: `url("https://i.ibb.co/DQC36zr/7915212-3785210-1900x.jpg")`,
-        }}
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-xxl-12">
-              <div className="breadcrumb__content text-center p-relative z-index-1">
-                <h3 className="breadcrumb__title">{displayName}</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BreadHeader title={displayName}></BreadHeader>
 
       <Container>
         <Row className="my-5">

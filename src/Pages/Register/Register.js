@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import BreadHeader from "../Shared/BreadHeader/BreadHeader";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -35,7 +36,7 @@ const Register = () => {
 
         setTimeout(() => {
           navigate("/login");
-        }, 2000);
+        }, 1000);
       })
       .catch((e) => {
         console.error(e);
@@ -65,6 +66,7 @@ const Register = () => {
   };
   return (
     <div>
+      <BreadHeader title={`SIGN UP`}></BreadHeader>
       <Container className="login-container">
         <Row className="justify-content-center ">
           <Col xs={10} md={5}>
@@ -121,13 +123,18 @@ const Register = () => {
                 </Form.Text>
               </div>
 
-              <Button variant="primary" type="submit" className="">
-                Register
-              </Button>
+              <div className="text-center">
+                <Button variant="primary" type="submit" className="mt-1">
+                  Register
+                </Button>
+              </div>
               <Toaster></Toaster>
 
-              <p>
-                Already Have an account? <Link to="/login">please Login</Link>
+              <p className="my-4 text-center">
+                Already Have an account?{" "}
+                <Link className="login-a" to="/login">
+                  please Login
+                </Link>
               </p>
               <div className="or-text-box">
                 <p className="or-text text-center">OR</p>

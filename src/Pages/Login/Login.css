@@ -1,7 +1,3 @@
-.login-container {
-  margin: 100px auto;
-}
-
 .or-text-box {
   position: relative;
 }
@@ -30,4 +26,8 @@
   transform: scale(0.9);
   transition: all ease 0.5s;
   cursor: pointer;
+}
+
+.login-a {
+  text-decoration: none;
 }
