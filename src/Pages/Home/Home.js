@@ -69,7 +69,7 @@ const Home = () => {
       <Container className="my-5 py-5">
         <Row className="gx-5">
           <Col xs={12} md={6}>
-            <img src={imgLern} alt="" />
+            <img className="img-fluid" src={imgLern} alt="" />
           </Col>
           <Col xs={12} md={6}>
             <AiOutlineRise
@@ -126,19 +126,31 @@ const Home = () => {
         <Row className="gap justify-content-center text-center text-light">
           <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
-              <img src="https://i.ibb.co/m4LC5sh/graphic-design.png" alt="" />
+              <img
+                className="img-fluid"
+                src="https://i.ibb.co/m4LC5sh/graphic-design.png"
+                alt=""
+              />
               <h4>Graphics Design</h4>
             </div>
           </Col>
           <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
-              <img src="https://i.ibb.co/fNKwVWm/web-development.png" alt="" />
+              <img
+                className="img-fluid"
+                src="https://i.ibb.co/fNKwVWm/web-development.png"
+                alt=""
+              />
               <h4>Web Development</h4>
             </div>
           </Col>
           <Col xs={11} md={3}>
             <div className="subject-box rounded shadow   bg-primary py-5">
-              <img src="https://i.ibb.co/hdNhNrC/social-media.png" alt="" />
+              <img
+                className="img-fluid"
+                src="https://i.ibb.co/hdNhNrC/social-media.png"
+                alt=""
+              />
               <h4>Digital Marketing</h4>
             </div>
           </Col>
@@ -146,19 +158,31 @@ const Home = () => {
         <Row className="gap justify-content-center text-center mt-5 text-light">
           <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
-              <img src="https://i.ibb.co/j9CJDq3/ui.png" alt="" />
+              <img
+                className="img-fluid"
+                src="https://i.ibb.co/j9CJDq3/ui.png"
+                alt=""
+              />
               <h4>UI/UX Design</h4>
             </div>
           </Col>
           <Col xs={11} md={3}>
             <div className="subject-box rounded shadow  bg-primary py-5">
-              <img src="https://i.ibb.co/Ykdw0yz/data-science.png" alt="" />
+              <img
+                className="img-fluid"
+                src="https://i.ibb.co/Ykdw0yz/data-science.png"
+                alt=""
+              />
               <h4>Data Science</h4>
             </div>
           </Col>
           <Col xs={11} md={3}>
             <div className="subject-box rounded shadow   bg-primary py-5">
-              <img src="https://i.ibb.co/RPxWrH0/deep-learning.png" alt="" />
+              <img
+                className="img-fluid"
+                src="https://i.ibb.co/RPxWrH0/deep-learning.png"
+                alt=""
+              />
               <h4>Artificial Intelligence </h4>
             </div>
           </Col>
