@@ -14,13 +14,16 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { Image } from "react-bootstrap";
 import "./Header.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => {
+        toast.success("Logout Success");
+      })
       .catch((error) => console.error(error));
   };
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -148,6 +151,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Toaster></Toaster>
     </div>
   );
 };

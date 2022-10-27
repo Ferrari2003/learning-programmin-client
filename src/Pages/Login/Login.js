@@ -24,7 +24,9 @@ const Login = () => {
       .then((res) => {
         setError("");
         toast.success("Successfully logged in!");
-        navigate(from, { replace: true });
+        setTimeout(() => {
+          navigate(from, { replace: true });
+        }, 2000);
       })
       .catch((error) => console.log(error));
   };
@@ -33,7 +35,9 @@ const Login = () => {
       .then((res) => {
         setError("");
         toast.success("Successfully logged in!");
-        navigate(from, { replace: true });
+        setTimeout(() => {
+          navigate(from, { replace: true });
+        }, 2000);
       })
       .catch((error) => console.log(error));
   };
@@ -53,7 +57,9 @@ const Login = () => {
 
         if (user.emailVerified) {
           toast.success("Successfully logged in!");
-          navigate(from, { replace: true });
+          setTimeout(() => {
+            navigate(from, { replace: true });
+          }, 2000);
         } else {
           toast.error(
             "Your email is not verified. Please verify your email address."

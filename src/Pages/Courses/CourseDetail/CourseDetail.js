@@ -220,7 +220,6 @@ const CourseDetail = () => {
                 </ul>
               </div>
             </div>
-            <div></div>
           </Col>
         </Row>
       </Container>

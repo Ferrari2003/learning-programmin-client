@@ -33,10 +33,10 @@ const Courses = () => {
               </Link>
             ))}
           </Col>
-          <Col>
+          <Col className="mt-5 mt-md-0">
             <Row xs={1} md={2} lg={3} className="g-4">
               {allCourses.map((course) => (
-                <Col key={course.id}>
+                <Col className="mb-4 mb-md-0" key={course.id}>
                   <Card>
                     <Card.Img variant="top" src={course.img} />
                     <Card.Body>

@@ -32,7 +32,10 @@ const Register = () => {
         handleUpdateUserProfile(name, photoURL);
         handleEmailVerification();
         toast.success("Please verify your email address.");
-        navigate("/login");
+
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
       })
       .catch((e) => {
         console.error(e);
