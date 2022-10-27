@@ -46,7 +46,7 @@ const Courses = () => {
                           <div>
                             <BsClock className="text-primary"></BsClock>
                           </div>
-                          <span>{course.class} class</span>
+                          <span>{course.class_length} class</span>
                         </Col>
                         <Col className="flex-grow-1">
                           <div>

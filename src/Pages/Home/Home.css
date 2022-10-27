@@ -35,6 +35,13 @@
   align-items: center;
   margin-bottom: 20px;
 }
+.hero-text {
+  text-align: justify;
+}
+.hero-title {
+  font-size: 44px;
+  font-weight: 600;
+}
 
 @media screen and (max-width: 600px) {
   .swiper-button-prev {
@@ -42,5 +49,11 @@
   }
   .swiper-button-next {
     display: none !important;
+  }
+  .hero-title {
+    font-size: 38px;
+  }
+  .hero {
+    background-position: bottom right !important;
   }
 }
