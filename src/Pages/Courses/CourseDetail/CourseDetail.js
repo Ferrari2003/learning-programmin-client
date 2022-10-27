@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
-import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { BsStarFill } from "react-icons/bs";
+import { BsDownload, BsFilePdf, BsStarFill } from "react-icons/bs";
 import { FaIcons } from "react-icons/fa";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import "./CourseDetail.css";
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const CourseDetail = () => {
   const courseSingle = useLoaderData();
@@ -32,7 +34,7 @@ const CourseDetail = () => {
     navigate("/checkout");
   };
   return (
-    <div>
+    <div ref={ref}>
       {/* {courseSingle.displayName}
       <button onClick={handleEnroll}> enroll this course</button> */}
 
@@ -56,7 +58,25 @@ const CourseDetail = () => {
       <Container>
         <Row className="my-5">
           <Col md={9} className="px-3 ">
-            <h2 className="my-4">{displayName}</h2>
+            <Row>
+              <Col>
+                <h2 className="my-4">{displayName}</h2>
+              </Col>
+              <Col xs={2}>
+                <Pdf
+                  targetRef={ref}
+                  scale={0.45}
+                  filename={`${displayName}.pdf`}
+                >
+                  {({ toPdf }) => (
+                    <button onClick={toPdf} className="mt-5 btn-download">
+                      <BsDownload size={"1.3em"}></BsDownload>
+                      <BsFilePdf size={"1.3em"}></BsFilePdf>
+                    </button>
+                  )}
+                </Pdf>
+              </Col>
+            </Row>
             <div className="d-flex gap mb-4">
               <div>
                 <p className="mb-0">

@@ -50,3 +50,13 @@
   left: 0;
   transform: translateY(50%);
 }
+
+.btn-download {
+  border: none;
+  background-color: transparent;
+}
+
+.btn-download:hover {
+  transform: scale(1.2);
+  transition: all ease 0.5s;
+}
