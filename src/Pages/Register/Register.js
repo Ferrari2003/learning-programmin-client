@@ -10,9 +10,15 @@ import BreadHeader from "../Shared/BreadHeader/BreadHeader";
 
 const Register = () => {
   const [error, setError] = useState("");
-  const { createUser, updateUserProfile, verifyEmail } =
+  const { createUser, updateUserProfile, verifyEmail, logOut } =
     useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logOut()
+      .then((res) => {})
+      .catch((error) => {});
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,6 +41,7 @@ const Register = () => {
 
         setTimeout(() => {
           navigate("/login");
+          handleLogout();
         }, 1000);
       })
       .catch((e) => {
