@@ -1,10 +1,10 @@
-.breadcrumb__overlay {
-  position: relative;
-}
 .include-bg {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.breadcrumb__overlay {
+  position: relative;
 }
 .breadcrumb__overlay::after {
   position: absolute;

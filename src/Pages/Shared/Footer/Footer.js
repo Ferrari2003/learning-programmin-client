@@ -34,14 +34,14 @@ const Footer = () => {
               <Link to="/" className="text-light">
                 Home
               </Link>
-              <Link className="text-light" to="/about">
-                About Us
-              </Link>
               <Link className="text-light" to="/courses">
                 Courses
               </Link>
-              <Link className="text-light" to="/contact">
-                Contact
+              <Link className="text-light" to="/faq">
+                FAQ
+              </Link>
+              <Link className="text-light" to="/blog">
+                Blog
               </Link>
             </Nav>
             <div className="justify-content-center d-flex mt-3 gap social-icon">

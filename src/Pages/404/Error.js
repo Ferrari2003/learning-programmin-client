@@ -6,7 +6,7 @@ const Error = () => {
     <div
       className="py-5 text-center"
       style={{
-        backgroundImage: `url('https://i.ibb.co/Z2WL7K9/error-bg.png')`,
+        backgroundImage: `url('https://i.ibb.co/kSZCZ12/error-bg.png')`,
         height: "80vh",
         backgroundSize: "contain",
         backgroundPosition: "center center",

@@ -5,7 +5,7 @@ const BreadHeader = ({ title }) => {
     <section
       className=" include-bg pt-150 pb-150 breadcrumb__overlay text-light "
       style={{
-        backgroundImage: `url("https://i.ibb.co/DQC36zr/7915212-3785210-1900x.jpg")`,
+        backgroundImage: `url("https://i.ibb.co/gMTm07X/7915212-3785210-1900x.jpg")`,
       }}
     >
       <div className="container">
